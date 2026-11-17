@@ -1,0 +1,36 @@
+# 源码 / 工程目录（不提交，本地保留）
+project/
+
+# 安装包走 GitHub Releases（单文件 >100MB，勿入 git）
+site/downloads/*.zip
+site/downloads/*.dmg
+site/downloads/*.exe
+site/downloads/*.AppImage
+
+# 依赖
+node_modules/
+
+# 构建 / 打包产物
+dist/
+release/
+.packaging/
+
+# 运行时数据（SQLite 数据库、上传的媒体、运行配置）
+data/
+
+# 本地 agent 项目数据（记忆 / 缓存，不入库）
+.workbuddy/
+
+# 临时提取的视频抽帧
+docs/_frames/
+
+# 临时脚本
+scripts/_extract_frames.py
+
+# 大体积演示视频（二进制，按需手动加入或用 LFS）
+docs/*.mp4
+
+# 日志 / 系统文件
+*.log
+.DS_Store
+Thumbs.db

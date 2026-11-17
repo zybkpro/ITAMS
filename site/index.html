@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT-AMS · IT 资产管理系统 — 家底清了，设备才是资源</title>
+<meta name="description" content="IT-AMS 是一款本地优先的 IT 资产管理系统。桌面主机 + 局域网 H5 共享同一份数据，台账、变更留痕、手机现场盘点，全部自己掌控。">
+<meta name="keywords" content="IT资产管理,资产台账,本地优先,局域网盘点,Electron,Vue3,SQLite,绿色版">
+<meta name="author" content="ZYBK Pro">
+<link rel="canonical" href="https://zybkpro.github.io/ITAMS/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="IT-AMS · IT 资产管理系统">
+<meta property="og:description" content="本地优先的 IT 资产管理系统：桌面主机 + 局域网 H5，台账、盘点、变更留痕自己掌控。">
+<meta property="og:url" content="https://zybkpro.github.io/ITAMS/">
+<meta property="og:image" content="https://zybkpro.github.io/ITAMS/docs/preview.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IT-AMS · IT 资产管理系统">
+<meta name="twitter:description" content="本地优先的 IT 资产管理系统：桌面主机 + 局域网 H5，台账、盘点、变更留痕自己掌控。">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ============ 导航栏 ============ -->
+<header class="site-header" id="top">
+  <div class="container nav-inner">
+    <a class="brand" href="#top" aria-label="IT-AMS 首页">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M7 8h4M7 11h7"/></svg></span>
+      <span class="brand-name">IT-AMS</span>
+      <span class="brand-sub">资产管理系统</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#features">核心功能</a>
+      <a href="#sync">多端协同</a>
+      <a href="#tech">技术架构</a>
+      <a href="#roadmap">路线图</a>
+      <a href="#download">下载</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="#download">立即下载 <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg></a>
+    <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span> 本地优先 · 局域网协同 · 开源可控</span>
+      <h1>把 IT 资产，管成一本<br><span class="grad">看得见的明白账</span></h1>
+      <p class="hero-lead">打开桌面，公司「家底」一目了然；手机连上局域网，现场就能盘点。<br>数据落在自己的电脑里，不搭云服务器，不绑公网账号。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="#download">免费下载 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg></a>
+        <a class="btn btn-ghost btn-lg" href="#features">了解功能 <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-5-5m5 5l-5 5"/></svg></a>
+      </div>
+      <div class="hero-meta">
+        <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 数据本地存储</span>
+        <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg> Windows / macOS</span>
+        <span><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg> 绿色版免安装</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="window-frame">
+        <div class="window-bar"><span class="wb-dots"><i></i><i></i><i></i></span><span class="wb-title">IT 资产管理系统 · 主机模式</span></div>
+        <img src="assets/desktop-dashboard.png" alt="IT-AMS 桌面端资产看板" loading="eager">
+      </div>
+      <div class="float-card float-card-1">
+        <div class="fc-icon cyan"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <div><strong>局域网服务运行中</strong><span>手机 H5 已连接 · 同一份数据</span></div>
+      </div>
+      <div class="float-card float-card-2">
+        <div class="fc-icon amber"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><strong>3 台超 5 年设备</strong><span>老化提醒 · 一眼可见</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 痛点 ============ -->
+<section class="section pain">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">为什么需要 IT-AMS</span>
+      <h2>设备一多，「家底」就容易糊</h2>
+      <p>Excel 能记，但更新靠自觉；贴过的标签会掉；微信里的截图三个月后就找不到了。</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card"><div class="pain-emoji">📋</div><h3>家底不清</h3><p>在用、闲置、故障、报废混在一起，超期设备没人说得清。</p></div>
+      <div class="pain-card"><div class="pain-emoji">🔀</div><h3>记录分散</h3><p>台账在 Excel、照片在微信、附件在邮箱，改完不知道落在哪。</p></div>
+      <div class="pain-card"><div class="pain-emoji">🤔</div><h3>改过就忘</h3><p>谁换了使用人、谁改了状态，交接审计时全靠翻聊天记录。</p></div>
+      <div class="pain-card"><div class="pain-emoji">🏃</div><h3>盘点要回工位</h3><p>现场核对一台，得跑回电脑前查一次，效率低还容易漏。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 核心功能 ============ -->
+<section class="section features" id="features">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">核心功能</span>
+      <h2>一本台账，把该管的都管了</h2>
+      <p>从录入、统计到留痕、盘点，收成一个你能自己掌控的小工具。</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
+        <h3>一屏看清家底</h3>
+        <p>深色运维看板：KPI 汇总、分类占比环图、状态柱状图、搜索词云，打开第一屏就知道有多少设备、什么状态。</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg></div>
+        <h3>资产信息，一处改完</h3>
+        <p>双击即编辑：编号、分类、型号、购入日期、价格、使用人、状态、序列号、备注，还可挂 4 张图片与 3 个附件。</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>全生命周期留痕</h3>
+        <p>导入、换人、改状态、传文件，按时间一条条排着。交接、审计、扯皮时，翻日志比翻聊天记录靠谱得多。</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div>
+        <h3>Excel 导入导出</h3>
+        <p>从旧台账迁过来成本低，日常也能导出成表。分类与编号前缀可自定义，新资产按规则自动出号。</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>本地 SQLite，数据在手</h3>
+        <p>数据就存在自己电脑的单文件 SQLite 里，断网、内网隔离照样用。拷走数据目录就是备份，不占公网资源。</p>
+      </article>
+      <article class="feature-card">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+        <h3>手机 H5 现场盘点</h3>
+        <p>主机开局域网服务，手机扫码连上就能查、能改。可设只读，防止现场误改，保存即写回同一份库。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 多端协同 ============ -->
+<section class="section sync" id="sync">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">多端协同 · 同一份数据</span>
+      <h2>电脑管账，手机下场</h2>
+      <p>这是 IT-AMS 最「落地」的能力。桌面端、浏览器、手机，读写的是同一份数据——不是各导一份 Excel 再对账。</p>
+    </div>
+
+    <div class="sync-showcase">
+      <figure class="shot shot-desktop">
+        <div class="shot-label"><span class="lab-dot"></span> 桌面端 · 资产台账</div>
+        <div class="shot-frame"><img src="assets/desktop-dashboard.png" alt="桌面端资产台账看板" loading="lazy"></div>
+      </figure>
+      <div class="sync-center">
+        <div class="sync-orbit">
+          <div class="orbit-ring ring-1"></div>
+          <div class="orbit-ring ring-2"></div>
+          <div class="orbit-core"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12v7c0 1.7 3.6 3 8 3s8-1.3 8-3v-7"/></svg></div>
+        </div>
+        <div class="sync-badge">局域网 8787</div>
+        <p>一键启动服务<br>三端实时同库</p>
+      </div>
+      <figure class="shot shot-mobile">
+        <div class="shot-label"><span class="lab-dot amber"></span> 手机 H5 · 现场盘点</div>
+        <div class="phone-frame"><img src="assets/h5-inventory.png" alt="手机 H5 资产盘点界面" loading="lazy"></div>
+      </figure>
+    </div>
+
+    <div class="sync-steps">
+      <div class="sync-step"><span class="step-num">01</span><div><h4>设置里点一下启动</h4><p>默认端口 8787，自动给出访问地址、二维码与口令，还能开「H5 只读」。</p></div></div>
+      <div class="sync-step"><span class="step-num">02</span><div><h4>手机扫码连上</h4><p>按状态筛选、卡片翻设备，看型号、序列号、价格、使用人；图片放大、附件下载。</p></div></div>
+      <div class="sync-step"><span class="step-num">03</span><div><h4>现场改，当场落库</h4><p>改状态或使用人，保存即写回同一库并记进日志。关掉服务就不占公网资源。</p></div></div>
+    </div>
+
+    <figure class="wide-shot">
+      <div class="shot-label"><span class="lab-dot"></span> 局域网服务设置 · 地址 / 二维码 / 口令</div>
+      <div class="shot-frame"><img src="assets/lan-service.png" alt="局域网服务设置界面" loading="lazy"></div>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 技术架构 ============ -->
+<section class="section tech" id="tech">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">技术架构</span>
+      <h2>唯一写库点在主机，API 只有一套</h2>
+      <p>Electron 桌面端同时充当数据主机；需要协作时，主进程里一键拉起局域网服务。业务内核与传输分离，端有多份，数据只有一份。</p>
+    </div>
+    <div class="tech-wrap">
+      <div class="arch-diagram">
+        <div class="arch-block arch-host">
+          <div class="arch-block-title"><span class="ab-ico">🖥</span> Electron Main <span class="ab-tag">数据主机</span></div>
+          <div class="arch-items">
+            <div class="arch-item"><span>IPC</span> → core.dispatch</div>
+            <div class="arch-item"><span>sql.js</span> → itams.sqlite</div>
+            <div class="arch-item"><span>LanServer</span> → 0.0.0.0:8787</div>
+          </div>
+        </div>
+        <div class="arch-lines">
+          <div class="arch-line"><span>IPC · 本机窗口</span></div>
+          <div class="arch-line"><span>HTTP · 局域网</span></div>
+        </div>
+        <div class="arch-clients">
+          <div class="arch-client"><div class="ac-ico">📱</div><strong>Vue3 渲染进程</strong><span>桌面窗口 · 本机免鉴权</span></div>
+          <div class="arch-client"><div class="ac-ico">📲</div><strong>手机 H5 / Web</strong><span>同网段 · 口令 Token</span></div>
+        </div>
+      </div>
+      <div class="tech-tags">
+        <span class="tech-tag">Electron 33</span>
+        <span class="tech-tag">Vue 3</span>
+        <span class="tech-tag">Vite 6</span>
+        <span class="tech-tag">ECharts 5</span>
+        <span class="tech-tag">sql.js (SQLite WASM)</span>
+        <span class="tech-tag">SheetJS</span>
+        <span class="tech-tag">qrcode</span>
+      </div>
+      <p class="tech-note">选 sql.js 而不是原生 SQLite：绿色版解压即跑，免去 Electron ABI / 重建模块的坑。定位是办公室中小台账，不做高并发 OLTP。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 路线图 ============ -->
+<section class="section roadmap" id="roadmap">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">版本与路线图</span>
+      <h2>先理清家底，再把盘点走成标准动作</h2>
+    </div>
+    <div class="roadmap-grid">
+      <div class="road-card done">
+        <div class="road-top"><span class="road-ver">V1.2</span><span class="road-status">已发布 · 当前主线</span></div>
+        <h3>桌面主机 + 局域网同库</h3>
+        <ul>
+          <li>Electron 桌面主机与内嵌局域网服务</li>
+          <li>H5 / Web 共享同一份 SQLite</li>
+          <li>台账 CRUD、图表、Excel 导入导出</li>
+          <li>全生命周期日志与系统设置</li>
+        </ul>
+      </div>
+      <div class="road-card next">
+        <div class="road-top"><span class="road-ver">V1.3</span><span class="road-status next">需求已定 · 规划中</span></div>
+        <h3>贴码 · 扫码 · 盘点留痕</h3>
+        <ul>
+          <li>每台资产唯一二维码，支持预览与标签打印</li>
+          <li>PC / Web 盘点列表与历史记录</li>
+          <li>H5 调摄像头扫码，结果写入进行中的盘点单</li>
+          <li>扫码幂等：同一任务同一资产不重复计数</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 下载 ============ -->
+<section class="section download" id="download">
+  <div class="container">
+    <div class="section-head center">
+      <span class="kicker">开始使用</span>
+      <h2>选一个平台，把家底理清</h2>
+      <p>各平台版本均已备好，绿色版解压即用、DMG 双击安装。数据写在用户目录，升级应用不易误删台账。</p>
+      <p class="os-hint" id="os-hint" aria-live="polite"></p>
+    </div>
+    <div class="download-grid">
+      <div class="dl-card featured" data-platform="Windows">
+        <span class="dl-ribbon">推荐</span>
+        <div class="dl-logo win"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M2 4.5l8.5-1.2v8.2H2V4.5zm0 9.4h8.5v8.2L2 20.9v-7zm9.7-9.3L22 2v9.5h-10.3V4.6zm0 10.5H22V22l-10.3-1.4v-6.8z"/></svg></div>
+        <h3>Windows 绿色版</h3>
+        <p class="dl-meta">win32-x64 · 解压即用</p>
+        <p class="dl-note">下载压缩包解压，双击 IT-AMS.exe 即可运行。免安装、免注册，拷走数据目录就完成备份。</p>
+        <a class="btn btn-primary btn-block" href="https://github.com/zybkpro/ITAMS/releases/download/v1.2.0/IT-AMS-win32-x64-green-1.2.0.zip" download>下载 Windows 绿色版 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg></a>
+      </div>
+      <div class="dl-card" data-platform="macOS">
+        <span class="dl-ribbon">推荐</span>
+        <div class="dl-logo mac"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.2-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.2 0 2-1.1 2.8-2.2.9-1.2 1.2-2.4 1.3-2.5-.1 0-2.5-1-2.5-3.5zM14.2 5.6c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></div>
+        <h3>macOS · Apple Silicon</h3>
+        <p class="dl-meta">arm64 (M 系列) · DMG 安装包</p>
+        <p class="dl-note">双击挂载安装。首次运行前，请先在解压目录执行一次随包的 mac-first-run.sh 解除隔离。</p>
+        <a class="btn btn-outline btn-block" href="https://github.com/zybkpro/ITAMS/releases/download/v1.2.0/IT-AMS-macOS-arm64-1.2.0.dmg" download>下载 macOS 版 (DMG) <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg></a>
+        <a class="dl-alt" href="https://github.com/zybkpro/ITAMS/releases/download/v1.2.0/IT-AMS-macOS-arm64-1.2.0.zip" download>只要 .app 压缩包？下载 ZIP 版</a>
+      </div>
+      <div class="dl-card" data-platform="macOSIntel">
+        <span class="dl-ribbon">推荐</span>
+        <div class="dl-logo mac"><svg viewBox="0 0 24 24" width="30" height="30" fill="currentColor"><path d="M16.4 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.2-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.2 0 2-1.1 2.8-2.2.9-1.2 1.2-2.4 1.3-2.5-.1 0-2.5-1-2.5-3.5zM14.2 5.6c.6-.8 1-1.9.9-3-.9 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1 .1 2.1-.5 2.9-1.3z"/></svg></div>
+        <h3>macOS · Intel</h3>
+        <p class="dl-meta">x64 · ZIP 便携包</p>
+        <p class="dl-note">适用于 Intel 芯片 Mac。解压后即可运行 .app，与桌面台账和局域网服务完全一致。</p>
+        <a class="btn btn-outline btn-block" href="https://github.com/zybkpro/ITAMS/releases/download/v1.2.0/IT-AMS-macOS-x64-1.2.0.zip" download>下载 Intel 版 <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg></a>
+      </div>
+    </div>
+    <p class="download-hint">当前版本 <strong>v1.2.0</strong> · 数据本地存储，无需注册账号 · 安装包托管于 <a href="https://github.com/zybkpro/ITAMS/releases" target="_blank" rel="noopener">GitHub Releases</a></p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="container narrow">
+    <div class="section-head center">
+      <span class="kicker">常见问题</span>
+      <h2>你可能想知道的</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary>数据存在哪里？需要上云吗？<span class="faq-plus"></span></summary>
+        <p>不需要。数据存在本机单文件 SQLite（打包后位于用户数据目录），拷走数据目录即可备份。断网、内网隔离环境都能正常使用。</p>
+      </details>
+      <details class="faq-item">
+        <summary>手机怎么连上？复杂吗？<span class="faq-plus"></span></summary>
+        <p>在桌面端设置里点「启动局域网服务」，手机连同一网络，扫描页面上的二维码或输入地址与口令即可。默认端口 8787，记得在防火墙放行。</p>
+      </details>
+      <details class="faq-item">
+        <summary>适合多大的资产规模？<span class="faq-plus"></span></summary>
+        <p>面向几十到几百台设备的中小台账，按约万级以内设计。定位是办公室局域网资产工具，不是高并发云端 CMDB。</p>
+      </details>
+      <details class="faq-item">
+        <summary>多人同时用，权限怎么控制？<span class="faq-plus"></span></summary>
+        <p>当前是口令级保护，可开启「H5 只读」防止现场误改。超大型多组织 RBAC、公网多租户不是现阶段目标，但同一套 API 后续可抽成独立服务。</p>
+      </details>
+      <details class="faq-item">
+        <summary>二维码盘点什么时候有？<span class="faq-plus"></span></summary>
+        <p>已列入 V1.3：每台资产唯一二维码、标签打印、PC/Web 盘点列表、H5 摄像头扫码写入盘点单。架构上沿用现有 dispatch，不必改动单主机单库前提。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 页脚 ============ -->
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="brand-mark"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M7 8h4M7 11h7"/></svg></span>
+      <div><strong>IT-AMS</strong><span>家底清了，设备才是资源。</span></div>
+    </div>
+    <nav class="footer-links">
+      <a href="#features">核心功能</a><a href="#sync">多端协同</a><a href="#tech">技术架构</a><a href="#roadmap">路线图</a><a href="#download">下载</a>
+    </nav>
+    <div class="footer-bottom"><span>© 2026 IT-AMS · IT 资产管理系统</span><span>Electron + Vue 3 · 本地优先</span></div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+it-asset-management
+asset-management
+electron
+vue3
+local-first
+inventory
+sqlite
+desktop-app
+lan-sync
+open-source
