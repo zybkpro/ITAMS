@@ -214,14 +214,21 @@ img{display:block;max-width:100%}
 
 /* ===== Download ===== */
 .download{background:radial-gradient(800px 400px at 50% 30%,rgba(20,80,130,.22),transparent 70%),var(--bg)}
+.license-callout{margin:18px auto 0;max-width:720px;font-size:14px;line-height:1.7;color:var(--txt-2);
+  background:rgba(56,214,232,.07);border:1px solid var(--line-strong);border-radius:12px;padding:12px 18px}
+.license-callout strong{color:var(--txt);margin-right:4px}
+.lic-free{color:#6dffa8;font-weight:700}
+.lic-paid{color:var(--amber);font-weight:700}
 .download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
 .dl-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;
   position:relative;display:flex;flex-direction:column}
-.dl-card.featured{border-color:var(--line-strong);background:linear-gradient(160deg,rgba(20,50,78,.7),rgba(11,22,40,.85));
+.dl-card.featured{border-color:rgba(255,181,71,.4);background:linear-gradient(160deg,rgba(48,36,20,.55),rgba(11,22,40,.85));
   box-shadow:0 16px 50px rgba(0,0,0,.3)}
+.dl-card.os-match{outline:1px solid rgba(56,214,232,.35);box-shadow:0 16px 50px rgba(0,0,0,.28),0 0 0 1px rgba(56,214,232,.12)}
 .dl-ribbon{position:absolute;top:16px;right:16px;font-size:11px;font-weight:700;color:#04121c;background:var(--grad);
   padding:3px 12px;border-radius:100px;display:block}
-.dl-card:not(.featured) .dl-ribbon{background:rgba(255,255,255,.12);color:var(--txt-2);border:1px solid var(--line)}
+.dl-card:not(.featured) .dl-ribbon{background:rgba(109,255,168,.18);color:#6dffa8;border:1px solid rgba(109,255,168,.35)}
+.dl-card .dl-alt + .dl-alt{margin-left:14px}
 .os-hint{display:none;margin-top:14px;font-size:13px;color:var(--cyan)}
 .os-hint.show{display:inline-flex;align-items:center;gap:7px;
   background:rgba(56,214,232,.08);border:1px solid var(--line-strong);

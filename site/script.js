@@ -30,36 +30,23 @@ function detectOS() {
   const ua = (navigator.userAgent || '').toLowerCase();
 
   if (/windows|win32|win64/.test(platform + ' ' + ua)) return 'Windows';
-  if (/mac/.test(platform) || /macintosh|mac os x/.test(ua)) {
-    // Chrome/Edge 高熵架构提示为 x86 时推荐 Intel 版，否则默认 Apple Silicon
-    return arch === 'x86' || /intel/.test(platform) ? 'macOSIntel' : 'macOS';
-  }
-  return 'Windows'; // 移动端/未知系统 → 通用的 Windows 绿色版
+  if (/mac/.test(platform) || /macintosh|mac os x/.test(ua)) return 'macOS';
+  return 'Windows';
 }
 
 function applyOSRecommendation(platform) {
   const labels = {
-    'Windows': 'Windows 绿色版',
-    'macOS': 'macOS Apple Silicon 版',
-    'macOSIntel': 'macOS Intel 版',
+    'Windows': 'Windows（V1.3 需激活 / V1.2 免费）',
+    'macOS': 'macOS V1.2 免费版',
   };
   document.querySelectorAll('.dl-card').forEach(card => {
-    const isRecommended = card.dataset.platform === platform;
-    card.classList.toggle('featured', isRecommended);
-    const btn = card.querySelector('.btn');
-    if (btn) {
-      btn.classList.toggle('btn-primary', isRecommended);
-      btn.classList.toggle('btn-outline', !isRecommended);
-    }
-    const ribbon = card.querySelector('.dl-ribbon');
-    if (ribbon) ribbon.style.display = isRecommended ? '' : 'none';
+    const key = card.dataset.platform || '';
+    const isRecommended = key === platform || (platform === 'Windows' && key === 'WindowsFree');
+    card.classList.toggle('os-match', isRecommended);
   });
   const hint = document.getElementById('os-hint');
   if (hint) {
-    const label = labels[platform] || platform;
-    hint.textContent = platform === 'Windows'
-      ? `已为你推荐通用版本：${label}（如使用 Mac，请选对应架构）`
-      : `已检测到你的系统，为你推荐 ${label}`;
+    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。V1.2 免费使用，V1.3 需激活码。`;
     hint.classList.add('show');
   }
 }
