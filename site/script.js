@@ -36,17 +36,18 @@ function detectOS() {
 
 function applyOSRecommendation(platform) {
   const labels = {
-    'Windows': 'Windows（V1.3 需激活 / V1.2 免费）',
+    'Windows': 'Windows V1.2 免费版',
     'macOS': 'macOS V1.2 免费版',
   };
   document.querySelectorAll('.dl-card').forEach(card => {
     const key = card.dataset.platform || '';
-    const isRecommended = key === platform || (platform === 'Windows' && key === 'WindowsFree');
+    // 系统推荐优先指向免费版；V1.3 需激活不自动高亮
+    const isRecommended = key === platform;
     card.classList.toggle('os-match', isRecommended);
   });
   const hint = document.getElementById('os-hint');
   if (hint) {
-    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。V1.2 免费使用，V1.3 需激活码。`;
+    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。推荐先下免费版；V1.3 需激活码。`;
     hint.classList.add('show');
   }
 }
