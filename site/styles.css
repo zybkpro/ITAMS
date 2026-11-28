@@ -220,6 +220,7 @@ img{display:block;max-width:100%}
 .lic-free{color:#6dffa8;font-weight:700}
 .lic-paid{color:var(--amber);font-weight:700}
 .download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+.download-grid-2{grid-template-columns:repeat(2,1fr);max-width:820px;margin-inline:auto}
 .dl-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;
   position:relative;display:flex;flex-direction:column}
 .dl-card.featured{border-color:var(--line-strong);background:linear-gradient(160deg,rgba(20,50,78,.7),rgba(11,22,40,.85));

@@ -41,13 +41,12 @@ function applyOSRecommendation(platform) {
   };
   document.querySelectorAll('.dl-card').forEach(card => {
     const key = card.dataset.platform || '';
-    // 系统推荐优先指向免费版；V1.3 需激活不自动高亮
     const isRecommended = key === platform;
     card.classList.toggle('os-match', isRecommended);
   });
   const hint = document.getElementById('os-hint');
   if (hint) {
-    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。推荐先下免费版；V1.4.1 需激活码。`;
+    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。当前均可免费下载使用。`;
     hint.classList.add('show');
   }
 }
