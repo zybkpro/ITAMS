@@ -46,7 +46,7 @@ function applyOSRecommendation(platform) {
   });
   const hint = document.getElementById('os-hint');
   if (hint) {
-    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。当前均可免费下载使用。`;
+    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。卡片提供 V1.2 免费下载；V1.4.1 需激活，点击可跳转 GitHub Releases。`;
     hint.classList.add('show');
   }
 }
