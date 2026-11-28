@@ -47,7 +47,7 @@ function applyOSRecommendation(platform) {
   });
   const hint = document.getElementById('os-hint');
   if (hint) {
-    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。推荐先下免费版；V1.3 需激活码。`;
+    hint.textContent = `已检测到你的系统：${labels[platform] || platform}。推荐先下免费版；V1.4.1 需激活码。`;
     hint.classList.add('show');
   }
 }
